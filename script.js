@@ -86,6 +86,87 @@ function safeText(value, fallback = "") {
     return typeof value === "string" && value.trim() ? value : fallback;
 }
 
+function renderLoadingCard(count = 1) {
+    return Array.from({ length: count })
+        .map(
+            () => `
+            <article class="loading-item" aria-hidden="true">
+                <div class="loading-line loading-line-title"></div>
+                <div class="loading-line loading-line-body"></div>
+                <div class="loading-line loading-line-body"></div>
+            </article>`
+        )
+        .join("");
+}
+
+function applyInitialLoadingState() {
+    const nameEl = document.querySelector("#profile-name");
+    const positionEl = document.querySelector("#profile-position");
+    const bioEl = document.querySelector("#profile-bio");
+
+    const githubContrib = document.querySelector("#github-contrib");
+    const githubStars = document.querySelector("#github-stars");
+    const githubStreak = document.querySelector("#github-streak");
+
+    const featuredProjects = document.querySelector("#featured-projects");
+    const featuredBlogs = document.querySelector("#featured-blogs");
+    const projectsList = document.querySelector("#projects-list");
+    const blogsList = document.querySelector("#blogs-list");
+
+    if (nameEl && !nameEl.textContent.trim()) {
+        nameEl.textContent = "Loading profile...";
+    }
+    if (positionEl && !positionEl.textContent.trim()) {
+        positionEl.textContent = "";
+    }
+    if (bioEl && !bioEl.textContent.trim()) {
+        bioEl.textContent = "Fetching latest profile details.";
+    }
+
+    if (githubContrib && !githubContrib.textContent.trim()) {
+        githubContrib.textContent = "Loading GitHub stats...";
+    }
+    if (githubStars && !githubStars.textContent.trim()) {
+        githubStars.textContent = "";
+    }
+    if (githubStreak && !githubStreak.textContent.trim()) {
+        githubStreak.textContent = "";
+    }
+
+    if (featuredProjects && !featuredProjects.textContent.trim()) {
+        featuredProjects.innerHTML = renderLoadingCard(2);
+    }
+    if (featuredBlogs && !featuredBlogs.textContent.trim()) {
+        featuredBlogs.innerHTML = renderLoadingCard(2);
+    }
+    if (projectsList && !projectsList.textContent.trim()) {
+        projectsList.innerHTML = renderLoadingCard(3);
+    }
+    if (blogsList && !blogsList.textContent.trim()) {
+        blogsList.innerHTML = renderLoadingCard(2);
+    }
+}
+
+function applyLoadFailureState() {
+    const projectsList = document.querySelector("#projects-list");
+    const blogsList = document.querySelector("#blogs-list");
+    const featuredProjects = document.querySelector("#featured-projects");
+    const featuredBlogs = document.querySelector("#featured-blogs");
+
+    if (featuredProjects) {
+        featuredProjects.innerHTML = '<article class="preview-item"><p>Unable to load projects right now.</p></article>';
+    }
+    if (featuredBlogs) {
+        featuredBlogs.innerHTML = '<article class="preview-item"><p>Unable to load blogs right now.</p></article>';
+    }
+    if (projectsList) {
+        projectsList.innerHTML = '<article class="list-item"><div><p>Unable to load projects right now.</p></div></article>';
+    }
+    if (blogsList) {
+        blogsList.innerHTML = '<article class="list-item"><div><p>Unable to load blogs right now.</p></div></article>';
+    }
+}
+
 async function loadLocalContentData() {
     const cacheBust = Date.now();
     const candidates = [
@@ -492,8 +573,10 @@ async function loadContent() {
         renderResumeActions(data);
     } catch (error) {
         console.error(error);
+        applyLoadFailureState();
     }
 }
 
 initThemeToggle();
+applyInitialLoadingState();
 loadContent();

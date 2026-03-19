@@ -290,6 +290,46 @@ a {
     color: var(--muted);
 }
 
+.loading-item {
+    padding: 0.95rem;
+}
+
+.loading-line {
+    height: 0.7rem;
+    border-radius: 999px;
+    margin-top: 0.55rem;
+    background: linear-gradient(90deg, var(--chip) 25%, var(--surface) 50%, var(--chip) 75%);
+    background-size: 220% 100%;
+    animation: shimmer 1.2s linear infinite;
+}
+
+.loading-line:first-child {
+    margin-top: 0;
+}
+
+.loading-line-title {
+    width: 46%;
+    height: 0.8rem;
+}
+
+.loading-line-body {
+    width: 100%;
+}
+
+.loading-item .loading-line-body:last-child {
+    width: 82%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 .page-title {
     padding: 1rem;
 }
