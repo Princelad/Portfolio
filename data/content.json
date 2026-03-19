@@ -1,0 +1,89 @@
+{
+    "profile": {
+        "name": "Prince Lad",
+        "position": "Software Development Engineer",
+        "bio": "I build practical, fast-moving products that solve real user problems. I enjoy combining strong UX with maintainable systems and data-informed decisions.",
+        "social": {
+            "github": "https://github.com/Princelad",
+            "x": "https://x.com/prince_lad58679",
+            "linkedin": "https://linkedin.com/in/prince-lad"
+        }
+    },
+    "resume": {
+        "pdfUrl": "data/Prince-Lad.pdf",
+        "downloadName": "Prince-Lad-Resume.pdf",
+        "ctaLabel": "Download Resume"
+    },
+    "telemetry": {
+        "leetcode": {
+            "label": "LeetCode",
+            "username": "princelad",
+            "solved": 412,
+            "rating": 1832,
+            "streak": 67
+        },
+        "github": {
+            "label": "GitHub",
+            "username": "Princelad",
+            "publicRepos": 38,
+            "stars": 129,
+            "contributionsLastYear": 864,
+            "streakDays": 43,
+            "graphImage": "https://ghchart.rshah.org/0f766e/Princelad"
+        }
+    },
+    "projects": [
+        {
+            "title": "SignalBoard",
+            "description": "Real-time issue triage board that compresses noisy incident streams into action cards.",
+            "stack": [
+                "React",
+                "Node",
+                "PostgreSQL"
+            ],
+            "featured": true,
+            "url": "#"
+        },
+        {
+            "title": "ShipPulse",
+            "description": "Release intelligence panel mapping deployment health to customer-facing outcomes.",
+            "stack": [
+                "TypeScript",
+                "Express",
+                "Redis"
+            ],
+            "featured": true,
+            "url": "#"
+        },
+        {
+            "title": "RouteLite",
+            "description": "Delivery path optimizer for urban fleets with practical ETA feedback loops.",
+            "stack": [
+                "Python",
+                "FastAPI",
+                "Mapbox"
+            ],
+            "featured": true,
+            "url": "#"
+        },
+        {
+            "title": "DocLens",
+            "description": "Internal documentation search and snippet ranking for distributed teams.",
+            "stack": [
+                "Next.js",
+                "OpenSearch"
+            ],
+            "featured": false,
+            "url": "#"
+        }
+    ],
+    "blogs": [
+        {
+            "title": "Understanding Multi-Language System Design at a Deeper Level",
+            "date": "2026-03-19",
+            "excerpt": "How compilers, linkers, shared libraries, and object formats let multiple languages work together in one production system.",
+            "featured": true,
+            "url": "blogs/understanding-multi-language-system-design.html"
+        }
+    ]
+}

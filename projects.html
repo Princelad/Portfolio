@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Prince Lad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="shell shell-wide">
+        <header class="site-head">
+            <a href="index.html" class="brand">PRINCE LAD</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="projects.html" aria-current="page">Projects</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="resume.html">Resume</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <span class="material-symbols-outlined theme-toggle-icon" aria-hidden="true">dark_mode</span>
+                </button>
+            </nav>
+        </header>
+
+        <section class="page-title">
+            <p class="eyebrow">WORK</p>
+            <h1>Selected Projects</h1>
+            <p>
+                Small systems, data tools, and production-ready interfaces. A focused list with context, stack,
+                and outcome.
+            </p>
+        </section>
+
+        <section class="list-block" id="projects-list" aria-live="polite"></section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

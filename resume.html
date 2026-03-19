@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume | Prince Lad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="shell shell-wide">
+        <header class="site-head">
+            <a href="index.html" class="brand">PRINCE LAD</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="resume.html" aria-current="page">Resume</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <span class="material-symbols-outlined theme-toggle-icon" aria-hidden="true">dark_mode</span>
+                </button>
+            </nav>
+        </header>
+
+        <section class="page-title">
+            <p class="eyebrow">PROFILE</p>
+            <h1>Resume</h1>
+            <p>Computer Science student focused on systems programming, high-performance tooling, and scalable software
+                architecture.</p>
+            <p class="hero-links">
+                <a id="resume-download" href="data/Prince-Lad.pdf" download="Prince-Lad-Resume.pdf">Download Resume</a>
+            </p>
+        </section>
+
+        <section class="resume-grid">
+            <article class="resume-card">
+                <h2>Professional Summary</h2>
+                <p>
+                    Computer Science student (9.5/10 CGPA) specializing in systems programming,
+                    high-performance tooling, and scalable software architecture. Proven track
+                    record of architecting Git-aware utilities, robust backends, and modular
+                    engines using Rust, C++, Python, and TypeScript.
+                </p>
+
+                <h2>Selected Projects</h2>
+                <div class="timeline-item">
+                    <h3>Lead Developer, Forge — Git-Aware Terminal Project Manager</h3>
+                    <p class="meta">Rust • 2025 - Present</p>
+                    <p>
+                        Engineered a high-performance TUI with Ratatui and libgit2, asynchronous
+                        repository indexing, and a concurrent state synchronization pipeline for
+                        responsive terminal workflows.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Full Stack Developer, Stockify — Inventory & Billing Platform</h3>
+                    <p class="meta">TypeScript / Next.js • 2025</p>
+                    <p>
+                        Built a multi-tenant inventory platform with RBAC and JWT authentication,
+                        plus QR-based POS billing and scalable PDF invoice generation.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Lead Developer, SquareLogic — Chess Game</h3>
+                    <p class="meta">Python / Pygame • 2024</p>
+                    <p>
+                        Architected a modular chess engine with robust move validation, algebraic
+                        parsing, and Minimax with Alpha-Beta pruning while maintaining a smooth UI.
+                    </p>
+                </div>
+            </article>
+
+            <article class="resume-card">
+                <h2>Education</h2>
+                <div class="timeline-item">
+                    <h3>CHARUSAT University</h3>
+                    <p class="meta">B.Tech in Computer Science and Engineering • 2023 - May 2027</p>
+                    <p>
+                        CGPA: 9.5/10. Coursework includes Data Structures & Algorithms,
+                        Operating Systems, Database Systems, and Software Engineering.
+                    </p>
+                </div>
+
+                <h2>Skills</h2>
+                <p class="chip-row">
+                    <span>Rust</span><span>C++</span><span>C</span><span>Java</span><span>Python</span><span>TypeScript</span>
+                    <span>SQL</span><span>Linux</span><span>Git
+                        Internals</span><span>React.js</span><span>Next.js</span><span>Node.js</span>
+                    <span>Flutter</span><span>Docker</span><span>PostgreSQL</span><span>Oracle
+                        SQL</span><span>Convex</span>
+                </p>
+
+                <h2>Certifications</h2>
+                <p class="timeline-item">Design and Analysis of Algorithms — NPTEL (IIT Madras)</p>
+                <p class="timeline-item">Data Structures and Algorithms using Java — NPTEL (IIT Kharagpur)</p>
+                <p class="timeline-item">Machine Learning with Python — IBM (Coursera)</p>
+                <p class="timeline-item">Full Stack Web Development (MERN) — Packt/Coursera</p>
+                <p class="timeline-item">Hashgraph Developer Certification — Hashgraph Association</p>
+
+                <h2>Leadership</h2>
+                <div class="timeline-item">
+                    <h3>Organizer — C Programming Hackathon</h3>
+                    <p class="meta">2025</p>
+                    <p>
+                        Directed a systems programming hackathon for 100+ participants and designed
+                        15+ problem statements focused on CLI utilities, optimization, and memory management.
+                    </p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Multi-Language System Design | Prince Lad</title>
+    <meta name="description"
+        content="A practical walkthrough of compilers, object files, shared libraries, and cross-language linking in modern systems." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="shell shell-wide">
+        <header class="site-head">
+            <a href="../index.html" class="brand">PRINCE LAD</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="../index.html">Home</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blogs.html" aria-current="page">Blogs</a>
+                <a href="../resume.html">Resume</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <span class="material-symbols-outlined theme-toggle-icon" aria-hidden="true">dark_mode</span>
+                </button>
+            </nav>
+        </header>
+
+        <article class="page-title blog-post" aria-labelledby="blog-title">
+            <p class="eyebrow">BLOG</p>
+            <h1 id="blog-title">Understanding Multi-Language System Design at a Deeper Level</h1>
+            <p class="meta">Mar 19, 2026</p>
+
+            <p>
+                I watched an excellent talk that explained how large-scale systems use multiple high-level
+                programming languages as tightly integrated parts of one architecture, not only as a frontend and
+                backend split.
+            </p>
+
+            <p>
+                We usually learn a simplified path: source code goes into a compiler and comes out as an executable.
+                That is true at a high level, but there are important intermediate layers between source code and final
+                binary. Those layers are exactly where interesting system-level flexibility appears.
+            </p>
+
+            <p>
+                If you can reason about assembly output, object files, and linkers, you can combine modules from
+                different languages in one build. This is common in performance-sensitive systems where each language
+                is chosen for a specific strength.
+            </p>
+
+            <h2>Same-Language Integration</h2>
+            <p>
+                In C projects, headers may reference declarations implemented in pre-compiled libraries. To avoid
+                duplication and keep binaries smaller, systems rely on dynamic/shared libraries:
+            </p>
+            <p>
+                Windows: .dll (Dynamic Link Library)<br />
+                Linux/Unix: .so (Shared Object)
+            </p>
+            <p>
+                Linkers then combine your compiled object code (.o) with those shared components to produce the final
+                executable.
+            </p>
+
+            <h2>Cross-Language Integration</h2>
+            <p>
+                Different languages emit binaries differently, but machine-level compatibility is what matters. When
+                object formats are compatible (such as ELF on Linux), modules built with different toolchains can be
+                linked and used together.
+            </p>
+            <p>
+                That is how teams write performance-critical paths in C/C++ and expose them to Python, Rust, or even
+                JavaScript through WebAssembly/FFI boundaries.
+            </p>
+
+            <h2>Try This Yourself</h2>
+            <p>
+                If you normally run:
+            </p>
+            <pre><code>gcc foo.c -o foo</code></pre>
+            <p>
+                also try:
+            </p>
+            <pre><code>gcc foo.c -S -o foo.s</code></pre>
+            <p>
+                Open the generated .s file and inspect the assembly. It is one of the best ways to connect high-level
+                code to low-level execution.
+            </p>
+
+            <h2>Further Learning</h2>
+            <p>
+                The video by Jorge Villalta (Core Dumped) gives a strong practical explanation of compilers,
+                linkers, and multi-language system design:
+            </p>
+            <p>
+                <a href="https://lnkd.in/dNAX5Y_h" target="_blank" rel="noopener noreferrer">Watch the video</a>
+            </p>
+
+            <p>
+                If you are exploring compiler internals, cross-language builds, or systems programming, this topic is
+                worth digging into deeply.
+            </p>
+        </article>
+    </main>
+    <script src="../script.js"></script>
+</body>
+
+</html>

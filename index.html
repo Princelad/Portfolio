@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Lad | Portfolio</title>
+    <meta name="description"
+        content="Minimal portfolio of Prince Lad with featured projects, blogs, and coding telemetry." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="shell">
+        <header class="site-head">
+            <a href="index.html" class="brand">PRINCE LAD</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="resume.html">Resume</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <span class="material-symbols-outlined theme-toggle-icon" aria-hidden="true">dark_mode</span>
+                </button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1 id="profile-name"></h1>
+            <p class="position" id="profile-position"></p>
+            <p class="bio" id="profile-bio"></p>
+            <div class="hero-links" id="profile-links"></div>
+        </section>
+
+        <section class="telemetry" aria-label="Coding telemetry">
+            <article class="metric-card">
+                <div class="metric-head">
+                    <p class="metric-title">GitHub</p>
+                    <span class="dot dot-cyan" aria-hidden="true"></span>
+                </div>
+                <p class="metric-main" id="github-contrib"></p>
+                <p class="metric-sub" id="github-stars"></p>
+                <p class="metric-sub" id="github-streak"></p>
+            </article>
+        </section>
+
+        <section class="contrib-graph">
+            <div class="section-head">
+                <h2>Contribution Graph</h2>
+                <a id="github-profile-link" href="#" target="_blank" rel="noopener noreferrer">Profile</a>
+            </div>
+            <img id="github-graph" src="" alt="GitHub contribution graph" loading="lazy" />
+        </section>
+
+        <section class="section-block" aria-labelledby="featured-projects-title">
+            <div class="section-head">
+                <h2 id="featured-projects-title">Featured Projects</h2>
+                <a href="projects.html">View all</a>
+            </div>
+            <div id="featured-projects" class="preview-list"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="featured-blogs-title">
+            <div class="section-head">
+                <h2 id="featured-blogs-title">Featured Blogs</h2>
+                <a href="blogs.html">View all</a>
+            </div>
+            <div id="featured-blogs" class="preview-list"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
