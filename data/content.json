@@ -79,6 +79,13 @@
     ],
     "blogs": [
         {
+            "title": "From Desktop Comfort to i3 Mastery: A CS Student's Linux Evolution",
+            "date": "2026-03-19",
+            "excerpt": "A reflective journey of moving from traditional desktop comfort to a keyboard-first i3 workflow on an Arch-based Linux setup.",
+            "featured": true,
+            "url": "blogs/mastering-i3-window-manager-journey.html"
+        },
+        {
             "title": "Understanding Multi-Language System Design at a Deeper Level",
             "date": "2026-03-19",
             "excerpt": "How compilers, linkers, shared libraries, and object formats let multiple languages work together in one production system.",

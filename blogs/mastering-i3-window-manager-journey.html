@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Desktop Comfort to i3 Mastery | Prince Lad</title>
+    <meta name="description"
+        content="A deeply reflective journey of switching to and mastering i3 window manager as a Computer Science student and Linux enthusiast." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="shell shell-wide">
+        <header class="site-head">
+            <a href="../index.html" class="brand">PRINCE LAD</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="../index.html">Home</a>
+                <a href="../projects.html">Projects</a>
+                <a href="../blogs.html" aria-current="page">Blogs</a>
+                <a href="../resume.html">Resume</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <span class="material-symbols-outlined theme-toggle-icon" aria-hidden="true">dark_mode</span>
+                </button>
+            </nav>
+        </header>
+
+        <article class="page-title blog-post" aria-labelledby="blog-title">
+            <p class="eyebrow">BLOG</p>
+            <h1 id="blog-title">From Desktop Comfort to i3 Mastery: A CS Student's Linux Evolution</h1>
+            <p class="meta">Mar 19, 2026</p>
+
+            <h2>1. Introduction</h2>
+            <p>
+                I did not switch to i3 because it looked cool in screenshots. I switched because I was tired of losing
+                time
+                in small, invisible ways. Traditional desktop environments were polished, but they often felt like they
+                were designed for broad convenience, not for the pace and focus I needed as a B.Tech Computer Science
+                student in India who spends most of the day coding, reading docs, and moving between terminals.
+            </p>
+            <p>
+                At first, my frustration sounded minor: too many clicks, too many floating windows, too much visual
+                noise,
+                too many context switches that broke concentration. But over months, those small frictions became a
+                bigger
+                question: do I want to consume a desktop environment, or build one around how I actually think?
+            </p>
+            <p>
+                That curiosity led me to tiling window managers, and eventually to i3. What started as a setup
+                experiment
+                turned into something much deeper. i3 did not just change my window layout. It changed the way I
+                approach
+                systems, problems, and even learning itself.
+            </p>
+
+            <figure class="blog-media">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/I3_window_manager_with_stacking_layout.png/1280px-I3_window_manager_with_stacking_layout.png"
+                    alt="Example i3 desktop with stacked layout" loading="lazy" decoding="async" />
+                <figcaption>
+                    i3 in stacked layout mode (source:
+                    <a href="https://commons.wikimedia.org/wiki/File:I3_window_manager_with_stacking_layout.png"
+                        target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>).
+                </figcaption>
+            </figure>
+
+            <h2>2. Why I Moved Away from Traditional DEs</h2>
+            <p>
+                Before i3, I used more traditional environments while moving across distros, including Fedora and
+                CachyOS, and then settling into an Arch-based workflow. KDE and other full desktop setups gave me a lot
+                out of the box, and for many users that is exactly what matters. But for my workflow, three limitations
+                kept repeating.
+            </p>
+            <p>
+                First was resource behavior. Modern DEs are capable, but they carry background processes and visual
+                layers
+                that I did not always need. On a coding-heavy day with browsers, language servers, containers, and local
+                databases running, I wanted every bit of system focus to go toward development.
+            </p>
+            <p>
+                Second was mouse dependency. I can type quickly, think quickly, and navigate code quickly. Needing the
+                mouse for window placement, workspace handling, and application switching started to feel like an
+                unnecessary tax.
+            </p>
+            <p>
+                Third was control. Desktop environments often expose customization, but within pre-defined boundaries. I
+                wanted direct control over behavior, not just themes and panel widgets. At some point, comfort becomes a
+                soft trap. You stay productive enough to avoid changing, but never optimized enough to feel in complete
+                command.
+            </p>
+
+            <figure class="blog-media blog-media-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Archlinux-logo-standard-version.svg"
+                    alt="Arch Linux logo" loading="lazy" decoding="async" />
+                <figcaption>
+                    Arch Linux logo (source:
+                    <a href="https://commons.wikimedia.org/wiki/File:Archlinux-logo-standard-version.svg"
+                        target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>).
+                </figcaption>
+            </figure>
+
+            <h2>3. First Encounter with i3 (Reality Check)</h2>
+            <p>
+                My first i3 session was humbling. I logged in and saw what looked like a nearly blank screen. No
+                familiar
+                panel setup, no obvious launcher, no visual hints about what to do next. It felt less like entering a
+                new
+                desktop and more like opening an empty editor with no keymap.
+            </p>
+            <p>
+                The keybindings felt foreign. I had to remember the Mod key combinations, understand splitting modes,
+                learn workspace jumps, and keep the i3 user guide open in another tab. What I expected was immediate
+                speed.
+                What I got was friction.
+            </p>
+            <p>
+                But the emotional curve was interesting: confusion came first, then curiosity. Curiosity became
+                determination when I realized every annoyance was also a path to understanding. The blankness was not a
+                missing feature. It was an invitation to define behavior deliberately.
+            </p>
+
+            <h2>4. The Configuration Phase (Core of the Journey)</h2>
+            <p>
+                This was the phase that truly changed me. I stopped asking, "Which setting should I click?" and started
+                asking, "What exact behavior do I want?" Most of that work lived in <code>~/.config/i3/config</code>,
+                where each line had a direct relationship with my day-to-day workflow.
+            </p>
+            <p>
+                I chose a Mod key strategy that matched my muscle memory and built a keybinding system around movement,
+                app launching, and workspace discipline. Instead of opening windows randomly and fixing layout later, I
+                started assigning tasks to dedicated workspaces: coding, docs, browser research, and communication.
+            </p>
+            <p>
+                I also integrated tools that made i3 feel complete without sacrificing minimalism. Rofi became my fast,
+                keyboard-first app launcher. Picom handled compositing where needed. Dunst gave me clean notifications
+                without interrupting flow. i3blocks provided a status bar that told me exactly what I cared about, and
+                nothing more.
+            </p>
+            <p>
+                Manual features taught me the most. Projector setup over HDMI was not always plug-and-play, so I wrote
+                small xrandr scripts for predictable layouts during presentations and lab work. Media keys did not work
+                magically in early setups, so I mapped them explicitly and connected them to pactl/playerctl commands.
+                These small scripts looked simple, but they gave me a stronger system intuition than any GUI wizard ever
+                had.
+            </p>
+            <p>
+                A simplified excerpt from my i3 config looked like this:
+            </p>
+            <pre><code>set $mod Mod4
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+r restart
+
+# Workspace routing
+set $ws1 "1:code"
+set $ws2 "2:web"
+set $ws3 "3:sys"
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+
+# Hardware keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle</code></pre>
+
+            <figure class="blog-media blog-media-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Alacritty_logo.svg"
+                    alt="Alacritty terminal logo" loading="lazy" decoding="async" />
+                <figcaption>
+                    Alacritty logo (source:
+                    <a href="https://commons.wikimedia.org/wiki/File:Alacritty_logo.svg" target="_blank"
+                        rel="noopener noreferrer">Wikimedia Commons</a>).
+                </figcaption>
+            </figure>
+            <p>
+                That code is not extraordinary, but the process behind it was. Every tweak came from observing pain,
+                testing a fix, breaking something, reading documentation, and trying again. i3 rewarded learning by
+                doing
+                in the purest way.
+            </p>
+
+            <h2>5. Workflow Transformation</h2>
+            <p>
+                Before i3, my workflow was reactive. I opened apps first and organized later. Windows overlapped, focus
+                drifted, and context switching often meant searching for what I had lost on the screen.
+            </p>
+            <p>
+                After i3, the workflow became intentional. Navigation is almost entirely keyboard-driven. Workspaces are
+                predictable. Context switches are faster because they are named and mapped in muscle memory. I move from
+                writing code in Alacritty to checking docs to running tests with near-zero cognitive interruption.
+            </p>
+            <p>
+                The biggest gain is not raw speed; it is consistency. A predictable interface removes decision fatigue.
+                For developers, that matters more than flashy UI. In my view, tiling WMs are superior for serious coding
+                not because they are trendy, but because they align the operating environment with how engineering work
+                actually happens: parallel tasks, fast switching, and long concentration windows.
+            </p>
+
+            <h2>6. Challenges and Friction Points</h2>
+            <p>
+                i3 is powerful, but it is honest about its trade-offs. Multi-monitor behavior and HDMI projector setups
+                needed extra scripting and testing, especially across different machines or classroom displays. Media
+                keys
+                were inconsistent until I explicitly configured them. Many conveniences that are automatic in DEs are
+                manual here.
+            </p>
+            <p>
+                Configuration errors were another reality. A single typo in the config can lead to confusing behavior,
+                and debugging takes patience. I had to learn to reload safely, keep backups, and validate one change at
+                a
+                time.
+            </p>
+            <p>
+                Most importantly, i3 requires time. If someone expects immediate polish without setup effort, the
+                experience can feel punishing. The payoff is real, but the initial investment is non-trivial.
+            </p>
+
+            <h2>7. What i3 Taught Me</h2>
+            <p>
+                This is the most meaningful part of the journey. i3 shifted my identity from being only a user of Linux
+                to becoming a builder of my own environment.
+            </p>
+            <p>
+                I began to understand Linux internals with more practical depth: how sessions start, how key events are
+                handled, how display configuration works, and how compositors and notification daemons fit into the
+                overall system. I read more documentation than ever before, and I became more comfortable debugging from
+                first principles instead of searching only for copy-paste fixes.
+            </p>
+            <p>
+                I also started writing small utility scripts more naturally. Whether it was monitor profiles, startup
+                routines, or quick automation hooks, I learned to treat script-writing as an everyday engineering skill,
+                not a special event. That habit has improved how I approach all technical problems, even outside Linux
+                customization.
+            </p>
+
+            <h2>8. My Current Setup</h2>
+            <p>
+                Today, my setup is intentionally simple and deeply personal. I run an Arch-based Linux system with i3 as
+                my primary window manager. Alacritty is my terminal, zsh is my shell, and Gruvbox defines the visual
+                language across terminal, editor, and status components.
+            </p>
+            <p>
+                Around that core, I use rofi, dunst, i3blocks, and a few custom scripts tailored to my student and
+                developer workflow. The setup is not built to impress anyone. It reflects how I think, how I work, and
+                what I value: speed, clarity, and control.
+            </p>
+
+            <h2>9. i3 vs Hyprland</h2>
+            <p>
+                I also use Hyprland in some contexts, and comparing both helped me understand my own priorities better.
+                Hyprland is visually modern, smooth, and aesthetically engaging. It brings animation and a different
+                kind
+                of desktop feel that many users love.
+            </p>
+            <p>
+                i3, however, remains my default for focused development. It is stable, straightforward, and brutally
+                predictable. If I need a system that behaves exactly the same way every day under heavy development
+                load,
+                i3 still wins for me. If I want a more dynamic visual experience and Wayland-native polish, Hyprland is
+                compelling.
+            </p>
+
+            <figure class="blog-media blog-media-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hyprland_logo.png" alt="Hyprland logo"
+                    loading="lazy" decoding="async" />
+                <figcaption>
+                    Hyprland logo (source:
+                    <a href="https://commons.wikimedia.org/wiki/File:Hyprland_logo.png" target="_blank"
+                        rel="noopener noreferrer">Wikimedia Commons</a>).
+                </figcaption>
+            </figure>
+
+            <h2>10. Who Should (and Should Not) Use i3</h2>
+            <p>
+                i3 is ideal for developers, power users, and students who want to understand Linux deeply while building
+                efficient habits. If you value keyboard-first navigation and are willing to invest in configuration, the
+                long-term return is excellent.
+            </p>
+            <p>
+                It is less suitable for users who expect plug-and-play convenience or who dislike editing configs and
+                troubleshooting system behavior. There is nothing wrong with choosing comfort-first tools. But i3 is
+                best
+                when you are ready to trade convenience for control.
+            </p>
+
+            <h2>Tips for Beginners</h2>
+            <p>
+                If you are starting with i3, begin small. Keep default settings for a few days, then change only one
+                thing at a time. Document your keybindings, version your dotfiles, and keep a fallback session
+                available.
+                Learn rofi early, script monitor profiles before you need them, and treat the official documentation as
+                your primary mentor.
+            </p>
+
+            <h2>11. Conclusion</h2>
+            <p>
+                Looking back, i3 changed more than my productivity metrics. It changed my thinking style. I now approach
+                systems with a builder's mindset: observe friction, inspect internals, automate intentionally, and
+                refine
+                continuously.
+            </p>
+            <p>
+                As a Computer Science student and Linux enthusiast, that shift has been one of the most valuable parts
+                of
+                my technical journey. i3 is not just a window manager. For me, it became a mindset transition from
+                consuming tools to shaping them.
+            </p>
+        </article>
+    </main>
+    <script src="../script.js"></script>
+</body>
+
+</html>
